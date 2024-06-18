@@ -1,0 +1,200 @@
+:root {
+  --space-lg: 2rem;
+  --space-md: 1rem;
+  --space-sm: 0.75rem;
+  --space-xs: 0.5rem;
+  --space-xs: 0.25rem;
+}
+
+@page {
+  margin: 0;
+  size: A4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-size: 10pt;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.5;
+}
+
+.page {
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  page-break-after: always;
+  width: 210mm;
+  height: 297mm;
+  padding: 10mm;
+}
+
+/** For screen preview **/
+@media screen {
+  body {
+    background-color: #e2e2e2;
+  }
+
+  .page {
+    background: white;
+    margin: 5mm auto;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 3fr 5fr;
+  gap: var(--space-lg);
+}
+
+ul,
+ol {
+  padding-left: 1em;
+}
+
+section {
+  margin-bottom: var(--space-lg);
+}
+section > p {
+  margin-bottom: 1em;
+}
+
+.position {
+  margin-bottom: var(--space-md);
+}
+.position header {
+  margin-bottom: var(--space-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.position header h3 {
+  margin-block: 0.2em;
+  font-weight: 600;
+}
+.position > p {
+  margin-bottom: var(--space-xs);
+}
+
+.project {
+  margin-bottom: var(--space-md);
+}
+.project header h3 {
+  margin-bottom: var(--space-xs);
+  font-weight: 500;
+}
+.project footer {
+  margin-top: var(--space-xs);
+}
+
+#additional-skills ul li {
+  list-style-type: "→ ";
+}
+
+#social ul {
+  list-style: none;
+  padding: 0;
+}
+
+#education .degree {
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+/**
+ * Typography
+ */
+h1 {
+  font-weight: 900;
+  line-height: 1;
+}
+
+h2,
+h3 {
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+h1,
+h2 {
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 1.2em;
+  margin-bottom: 0.66em;
+}
+h1:first-child,
+h2:first-child,
+h3:first-child {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.125rem;
+}
+
+/**
+ * Utility classes
+ */
+.h-stack {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.organization {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0;
+  color: #666666;
+}
+
+.time-period {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0;
+  color: #666666;
+}
+
+/**
+ * Make links look clickable in screen preview.
+ */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media screen {
+  a {
+    text-decoration: underline;
+  }
+  a:hover {
+    text-decoration-thickness: 2px;
+  }
+}
